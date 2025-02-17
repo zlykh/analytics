@@ -9,6 +9,7 @@ file = "~/Downloads/online.csv"
 data = pd.read_csv(generated_link, names=["_", "utc", "value"])
 
 df2 = data.iloc[[0, -1]]
+print(df2)
 
 data['utc'] = pd.to_datetime(data.utc, utc=True)
 data['hm'] = (data.utc.dt.tz_convert('Europe/Moscow')).dt.floor('min').dt.time
